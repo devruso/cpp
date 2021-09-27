@@ -6,26 +6,17 @@ int main() {
    
     cin >> Ih >> Im >> Fh >> Fm;
 
-    if (Ih - Fh >= 0) {
-        if (Im - Fm == 0){
-            cout << "O JOGO DUROU 24 HORA(S)"<< " E 0 MINUTO(S)" << endl;
-        }
-        if (Im >= Fm){          
-        M  = abs(Im-Fm-60);  
-        }
-        H  = abs(Ih - Fh - 24);
-            cout << "O JOGO DUROU " << H <<  " HORA(S) E "<< M  << " MINUTO(S)" << endl;
-        }
-    if( Ih - Fh < 0){
-        H = abs(Fh - Ih) ;
-        if(Im < Fm){
-            M = Fm - Im;
-            cout << "O JOGO DUROU "<< H << " HORA(S) E "<< M  << " MINUTO(S)"<< endl;
-        }else if(Im > Fm){
-            M = abs(Im-Fm-60);
-            cout << "O JOGO DUROU "<< H << " HORA(S) E "<< M  << " MINUTO(S)"<< endl;
-        }
-    }
+    Jg = (Fh*60+Fm) - (Ih*60+Im);
+    
+    if (Jg <= 0) {
+        Jg = Jg + (24*60);
+
+        cout << "O JOGO DUROU "<< Jg/60 << " HORA(S) E "<< Jg%60  << " MINUTO(S)"<< endl;    
+    }else{
+        cout << "O JOGO DUROU "<< Jg/60 << " HORA(S) E "<< Jg%60  << " MINUTO(S)"<< endl;    
+    }    
 
     return 0;
-}
+    }
+
+    
