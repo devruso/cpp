@@ -1,54 +1,45 @@
 #include <iostream>
-#include <iomanip> 
+ 
 using namespace std;
+ int a,b,a1=0,b1=0,c,x=0,x1,z;
 
-float n,m,c,x,a,b,z=0,q; 
 int main() {
-
-    while(q != 2){
+    
+    while (x != 2){
         do{
-        cin >> n;  
-        if(n< 0 || n > 10){
-            cout << "nota invalida" << endl;
+          cin >> a >> b;
+            if(a>b){
+                a1+=1;
+            }else if(b>a){
+                b1+=1;
+            }else if(b == a){
+                c+=1;
+            }
+        } while(a < 0 | b < 0);
+        x+=2;
+        if(x == 2){
+            x1+=1;
+            cout << "Novo grenal (1-sim 2-nao)" << endl;
+            cin >> z;
+            if(z== 1){
+                a = 0;
+                b = 0;
+                x = 0;
+            }else if(z == 2){
+                cout << x1 << " grenais" << endl;
+                cout << "Inter:"<<a1<<endl;
+                cout << "Gremio:"<<b1<<endl;
+                cout << "Empates:"<<c<<endl;
+                if(a>b){
+                    cout<<"Inter venceu mais"<<endl;
+                }else if(b>a){
+                    cout<<"Gremio venceu mais"<<endl;
+                    }else{
+                        cout<<"Não houve vencedor"<<endl;
+                    }
+            }
         }
-        if(n>=0 && n<=10){
-            z++;
-        }
-    }while (n<0 || n>10);
-
-        cin >> m;
-        if(m>=0 && m<=10){
-            z++;
-        }  
-        while (m<0 || m>10){
-            cout << "nota invalida" << endl;
-            cin >>m;
-            if(m>=0 && m<=10){
-            z++;
-        }
-    }       
-    
-    if(z == 2){
-    c = (n+m)/2;
-    cout <<fixed<<setprecision(2)<< "media = "<<c<<endl;
-    n=0;
-    m=0;
-    z=0;
-    c=0;
-    do{
-        cout <<"novo calculo (1-sim 2-nao)"<<endl;
-        cin >> q;
-        if (q == 2){
-            break;
-        }
-    }   while(q<1 || q >2);
+    }
+ 
+    return 0;
 }
-}
-
-return 0;
-
-}
-
-
-        
-    
