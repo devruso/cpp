@@ -8,16 +8,21 @@ for i in range(n):
     z.append(lista)
     z[i] = list(map(int, input().split()))
 
-for j in range(len(z)):
-    c=0
+for j in range(n): 
     x = 0
     y = 0
-    for k in range(len(z)):
-        print(z[j][k])
-        x = 0
+    w = 0
+    for k in range(m):
         if z[j][k] == 0:
             c+=1
-            x += j
-            y += k
-        if c == 2:
-            print(c,x,y)
+            x = j + 1
+            w = k + 1
+            if c == 2:
+                y = w - 1 
+                print('Fileira: ',x)
+                print('Assentos: ', y,'e ',w)
+                break
+        else:
+                c = 0
+    
+        
